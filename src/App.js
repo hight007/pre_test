@@ -7,12 +7,13 @@ import {
 } from "react-router-dom";
 
 //components
-
+import question1 from './components/question1'
+import question2 from './components/question2'
 
 export default function App() {
 
   const redirectToHome= () => {
-    return <Redirect to="/login" />;
+    return <Redirect to="/question1" />;
   };
 
   return (
@@ -20,11 +21,8 @@ export default function App() {
       <div>
         
         <Switch>
-          <SecuredRoute path="/Home" component={Home} />
-          <Route path="/Login" component={Login} />
-          <Route path="/Register" component={Register} />
-          <Route path="/Product" component={Product} />
-
+          <Route path="/question1" component={question1} />
+          <Route path="/question2" component={question2} />
           <Route exact={true} path="/" component={redirectToHome} />
           <Route exact={true} path="*" component={redirectToHome} />
         </Switch>
